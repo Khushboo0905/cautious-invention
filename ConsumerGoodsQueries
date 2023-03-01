@@ -1,3 +1,4 @@
+Request 1:
 /*Provide the list of markets in which customer "Atliq Exclusive" operates its
 business in the APAC region.*/
 select 
@@ -7,7 +8,8 @@ from
 where 
   customer = "Atliq Exclusive" 
   and region = "APAC";
-  
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+Request 2:  
 /*What is the percentage of unique product increase in 2021 vs. 2020? 
 The final output contains these fields,unique_products_2020 ,unique_products_2021,percentage_chg*/
 with cte as(
@@ -45,7 +47,8 @@ select
     )as perc_chg 
 from 
   cte2;
-  
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+Request 3: 
 /*Provide a report with all the unique product counts for each segment and
 sort them in descending order of product counts. The final output contains
 2 fields,segment,product_count*/
@@ -58,7 +61,9 @@ group by
   segment 
 order by 
   count(product_code) desc;
-  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+Request 4: 
 /*Follow-up: Which segment had the most increase in unique products in
 2021 vs 2020? The final output contains these fields,
 segment
@@ -106,7 +111,9 @@ select
   ) as perc_chg 
 from 
   cte2;
-  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+Request 5: 
 /*Get the products that have the highest and lowest manufacturing costs.
 The final output should contain these fields,
 product_code
@@ -136,7 +143,8 @@ where
   ) 
 order by 
   mcost.manufacturing_cost;
-  
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+Request 6: 
 /*Generate a report which contains the top 5 customers who received an
 average high pre_invoice_discount_pct for the fiscal year 2021 and in the
 Indian market. The final output contains these fields,
@@ -163,6 +171,8 @@ order by
   average_discount_percentage desc 
 limit 5;
   
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+Request 7: 
 /*Get the complete report of the Gross sales amount for the customer “Atliq
 Exclusive” for each month. This analysis helps to get an idea of low and
 high-performing months and take strategic decisions.
@@ -191,7 +201,9 @@ group by
 order by 
   year, 
   month(fs.date);
-  
+ 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+Request 8: 
 /*In which quarter of 2020, got the maximum total_sold_quantity? The final
 output contains these fields sorted by the total_sold_quantity,
 Quarter
@@ -208,6 +220,8 @@ group by
 order by 
   total_sold_quantity desc;
   
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+Request 9: 
 /*Which channel helped to bring more gross sales in the fiscal year 2021
 and the percentage of contribution? The final output contains these fields,
 channel
@@ -250,6 +264,8 @@ select
 from 
   cte2;
   
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+Request 2: 
 /*Get the Top 3 products in each division that have a high
 total_sold_quantity in the fiscal_year 2021? The final output contains these
 fields,
